@@ -1,0 +1,40 @@
+int light = D6;
+void setup() 
+{
+    pinMode(light,OUTPUT);
+    Particle.subscribe("Deakin_RIOT_SIT210_Photon_Buddy", detect);
+}
+
+void loop() 
+{
+    
+}
+
+void blink()
+{
+    digitalWrite(light,HIGH);
+    delay(1000);
+    digitalWrite(light,LOW);
+    delay(500);
+    
+}
+void detect(const char *event, const char *data)
+{
+    if (strcmp(data,"wave")==0) 
+    {
+        blink();
+        blink();
+        blink();
+    }
+    else if (strcmp(data,"pat")==0)
+    {
+        blink();
+        blink();
+        blink();
+        blink();
+        blink();
+    }
+    else
+    {
+    }
+}
