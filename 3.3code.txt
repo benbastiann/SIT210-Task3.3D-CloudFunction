@@ -10,12 +10,21 @@ void loop()
     
 }
 
-void blink()
+void blink()		//using for wave
 {
     digitalWrite(light,HIGH);
     delay(1000);
     digitalWrite(light,LOW);
     delay(500);
+    
+}
+
+void blinkFAST()		//using for pat
+{
+    digitalWrite(light,HIGH);
+    delay(400);
+    digitalWrite(light,LOW);
+    delay(400);
     
 }
 void detect(const char *event, const char *data)
@@ -28,11 +37,16 @@ void detect(const char *event, const char *data)
     }
     else if (strcmp(data,"pat")==0)
     {
-        blink();
-        blink();
-        blink();
-        blink();
-        blink();
+        blinkFAST();
+        blinkFAST();
+        blinkFAST();
+        blinkFAST();
+        blinkFAST();
+        blinkFAST();
+        blinkFAST();
+        blinkFAST();
+        blinkFAST();
+        blinkFAST();    
     }
     else
     {
